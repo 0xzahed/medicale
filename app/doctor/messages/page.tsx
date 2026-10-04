@@ -1,0 +1,4 @@
+"use client";
+import { SimplePortalPage as P } from "../slides";
+const threads = [["John Carter","Pre-op vragen over knie — kan ik ...","9:12 AM"],["Emily Ross","Post-op pain is much better, thanks!","Yesterday"],["Front desk","2 new referrals need approval","Mon"]];
+export default function Page() { return <P title="Messages" subtitle="5 unread across care teams." body={<div className="space-y-2">{threads.map(([n,m,t]) => <div key={n as string} className="flex gap-3 rounded-xl bg-soft p-3.5"><span className="grid h-10 w-10 place-items-center rounded-full bg-primary font-bold text-white">{(n as string)[0]}</span><span><b className="block text-sm">{n as string}</b><span className="text-[13px] text-muted">{m as string} • {t as string}</span></span></div>)}<p className="text-xs text-muted">Full chat mirrors the patient portal — messages sync both ways.</p></div>} />; }
